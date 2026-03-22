@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VKSRR - Sklep</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #121212; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; background: #1e1e1e; padding: 40px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #7289da; margin-bottom: 10px; }
+        .product-box { margin-top: 20px; padding: 20px; border: 1px solid #444; border-radius: 10px; }
+        .btn-buy { background: #7289da; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .btn-buy:hover { background: #5b73c7; transform: scale(1.05); }
+        
+        /* Styl okienka (Modal) */
+        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        .modal-content { background: #2f3136; margin: 15% auto; padding: 30px; border-radius: 10px; width: 300px; text-align: center; }
+        .discord-link { color: #00aff4; text-decoration: none; font-weight: bold; font-size: 20px; }
+        .close { color: #aaa; float: right; font-size: 28px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>VKSRR SHOP</h1>
+    <p>Wybierz interesujący Cię produkt</p>
+    <div class="product-box">
+        <h3>Przykładowy Produkt</h3>
+        <p>Cena: Do ustalenia</p>
+        <button class="btn-buy" onclick="openModal()">ZAKUP</button>
+    </div>
+</div>
+
+<div id="buyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Finalizacja zakupu</h2>
+        <p>Aby dokończyć zakup, wejdź na nasz serwer:</p>
+        <a href="https://discord.gg/GM8t4fpGpu" class="discord-link" target="_blank">DOŁĄCZ DO DISCORDA</a>
+    </div>
+</div>
+
+<script>
+    function openModal() { document.getElementById("buyModal").style.display = "block"; }
+    function closeModal() { document.getElementById("buyModal").style.display = "none"; }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("buyModal")) closeModal();
+    }
+</script>
+
+</body>
+</html>
